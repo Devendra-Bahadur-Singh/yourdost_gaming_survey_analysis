@@ -26,7 +26,7 @@ SELECT
     COUNT(*) AS total_active_respondents,
     ROUND(SUM(CASE WHEN stmt_distraction IN ('Agree', 'Strongly Agree') THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 1) AS pct_distraction
 FROM gaming_survey_clean
-WHERE kids_play_games IN ('Yes', 'Sometimes') 
+WHERE kids_play_games != 'No' 
   AND stmt_distraction IS NOT NULL;
 ```
 
@@ -38,7 +38,7 @@ SELECT
     COUNT(*) AS response_count,
     ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM gaming_survey_clean WHERE kids_play_games IN ('Yes', 'Sometimes')), 1) AS percentage_share
 FROM gaming_survey_clean
-WHERE kids_play_games IN ('Yes', 'Sometimes')
+WHERE kids_play_games != 'No'
 GROUP BY stmt_stress_buster, stmt_distraction
 ORDER BY response_count DESC;
 ```
