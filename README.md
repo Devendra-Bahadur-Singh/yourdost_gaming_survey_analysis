@@ -55,9 +55,13 @@ ORDER BY response_count DESC;
 
 ## 🚀 Repository Structure
 ```text
-├── yourdost_infographic_kpi.png    # 1-page visual infographic slide
-├── README.md                      # Project documentation
-└── queries.sql                    # Production SQL scripts & data cleaning pipelines
+├── Executive_Analytics_Report.docx       # Full executive report (Word format)
+├── Executive_Analytics_Report.pdf        # Full executive report (PDF format)
+├── visualize.py                          # Matplotlib script generating the infographic
+├── yourdost_gaming_survey_script.sql     # Production SQL scripts & data cleaning pipelines
+├── yourdost_infographic_kpi.png          # 1-page visual infographic slide
+├── gaming_survey_raw.csv                 # Raw survey data source (N = 100)
+└── README.md                             # Project documentation
 ```
 
 ---
